@@ -1,9 +1,9 @@
 from rest_framework import serializers
-from .models import Expence
+from .models import Expense
 
-
-class ExpenceSerializer(serializers.ModelSerializer):
-    # シリアライザの定義
+class ExpenseSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Expence # シリアライズするモデル
-        fields = '__all__'  # 全てのフィールドをシリアライズする
+        model = Expense
+        fields = '__all__'
+        read_only_fields = ['date']  # ← 入力を不要にする
+
